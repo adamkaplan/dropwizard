@@ -7,7 +7,7 @@
 
     <groupId>com.yammer.dropwizard</groupId>
     <artifactId>dropwizard-parent</artifactId>
-    <version>0.5.2-SNAPSHOT</version>
+    <version>0.5.1.1</version>
     <packaging>pom</packaging>
     <name>Dropwizard Project</name>
     <url>http://dropwizard.codahale.com/</url>
@@ -18,13 +18,7 @@
 
     <modules>
         <module>dropwizard-core</module>
-        <module>dropwizard-client</module>
         <module>dropwizard-db</module>
-        <module>dropwizard-auth</module>
-        <module>dropwizard-example</module>
-        <module>dropwizard-views</module>
-        <module>dropwizard-testing</module>
-        <module>dropwizard-scala_2.9.1</module>
     </modules>
 
     <properties>
