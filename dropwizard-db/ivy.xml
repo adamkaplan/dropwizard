@@ -1,0 +1,23 @@
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd"
+    xmlns:m="http://ant.apache.org/ivy/maven">
+
+  <info organisation="com.gilt" module="${project.name}">
+    <extends organisation="com.giltgroupe" module="parent" revision="${ivy.parent.revision}" location="${ivy.parent.location}" />
+    <description homepage="http://www.gilt.com/">${project.title}</description>
+  </info>
+
+  <publications>
+    <artifact name="${project.name}" type="jar" ext="jar" conf="default" />
+    <artifact name="${project.name}" type="source" ext="jar" conf="sources" m:classifier="sources" />
+    <artifact name="${project.name}" type="javadoc" ext="jar" conf="javadoc" m:classifier="javadoc" />
+  </publications>
+
+  <dependencies>
+        <dependency org="com.yammer.dropwizard" name="dropwizard-core" rev="0.5.1" conf="default"/>
+        <dependency org="org.jdbi" name="jdbi" rev="2.39" conf="default"/>
+        <dependency org="com.yammer.metrics" name="metrics-jdbi" rev="2.1.3" conf="default"/>
+        <dependency org="org.apache.tomcat" name="tomcat-dbcp" rev="7.0.29" conf="default"/>
+        <dependency org="hsqldb" name="hsqldb" rev="1.8.0.10" conf="test->default"/>
+  </dependencies>
+</ivy-module>

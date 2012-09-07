@@ -2,10 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <distributionManagement>
+      <repository>
+        <id>nexus.gilt.internal.snapshots</id>
+        <name>nexus.gilt.modified</name>
+        <url>https://nexus.gilt.com/nexus/content/repositories/external.releases.group</url>
+      </repository>
+      <snapshotRepository>
+        <id>nexus.gilt.internal.snapshots</id>
+        <name>nexus.gilt.modified</name>
+        <url>https://nexus.gilt.com/nexus/content/repositories/gilt.modified</url>
+      </snapshotRepository>
+    </distributionManagement>
+
     <parent>
         <groupId>com.yammer.dropwizard</groupId>
         <artifactId>dropwizard-parent</artifactId>
-        <version>0.5.2-SNAPSHOT</version>
+        <version>0.5.1.1</version>
     </parent>
 
     <artifactId>dropwizard-db</artifactId>
@@ -15,7 +28,7 @@
         <dependency>
             <groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
-            <version>${project.version}</version>
+            <version>0.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.jdbi</groupId>

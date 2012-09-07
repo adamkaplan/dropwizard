@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<project name="dropwizard-db" default="dist" basedir=".">
+    <property name="build.common.java.dir" location="./build/java" />
+    <import file="${build.common.java.dir}/default.xml" />
+
+    <path id="test.run.classpath">
+        <pathelement location="${test.classes.dir}" />
+        <pathelement location="${main.classes.dir}" />
+        <path refid="ivy.test.classpath" />
+        <path refid="compile.classpath" />
+    </path>
+
+    <target name="test:run:scalatest">
+        <mkdir dir="${test.results.dir}" />
+
+        <java fork="true" classname="org.scalatest.tools.Runner" failonerror="false">
+            <classpath refid="test.run.classpath" />
+            <jvmarg line="${testng.jvmarg.line}" />
+            <jvmarg value="-Djava.endorsed.dirs=${endorsed.dirs}" />
+            <jvmarg line="-Dgilt.environment=test -Dgala.env=test" />
+            <arg line="-p ${test.classes.dir}" />
+            <arg line="-u ${test.results.dir}" />
+            <arg value="-o" />
+        </java>
+    </target>
+
+    <target name="test:run" depends="test:run:scalatest" />
+
+    <target name="test:do" />
+
+    <target name="test" depends="test:compile,test:run" />
+</project>
